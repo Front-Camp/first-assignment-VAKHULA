@@ -7,7 +7,11 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  /* your logic here...*/
+  arr = arr.filter((iteratee) => {
+      return iteratee !== -Infinity && iteratee !== Infinity && Number.isInteger(iteratee);
+  });
+
+  return Math.max(...arr);
 };
 
 export default max;
