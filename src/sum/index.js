@@ -10,7 +10,11 @@
 * sum(-1, 13); // 12
 */
 const sum = (a, b) => {
-  /* your logic here...*/
+  if (Number.isInteger(a) && Number.isInteger(b)) {
+    return a + b;
+  } else {
+    throw new Error("one of arguments is not a number");
+  }
 };
 
 export default sum;
