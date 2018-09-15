@@ -8,7 +8,7 @@
  * isObject(null); // false
  */
 const isObject = data => {
-  /* your logic here...*/
+  return data != null && typeof data === 'object' && Array.isArray(data) === false;
 };
 
 export default isObject;
