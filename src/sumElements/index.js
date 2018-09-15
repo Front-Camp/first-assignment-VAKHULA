@@ -11,7 +11,17 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-  /* your logic here...*/
+  function toNumber(val) {
+    return val === Infinity ?
+      0 :  val === -Infinity ?
+      0 : Number(val) ?
+      Number(val) : parseFloat(val) ?
+      parseFloat(val) : 0;
+  };
+
+  return arr.reduce((a, b) => {
+    return toNumber(a) + toNumber(b);
+  }, 0);
 };
 
 export default sumElements;
